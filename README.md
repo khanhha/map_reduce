@@ -7,7 +7,13 @@ pip install mrjob
 __Find the most rated movie__: this example runs two mapreduce steps. the first one calculate the number of rating per movieID.
 the second one first map MOVIEID to MOVIENAME and the find the movie with the maximum rating.
 ```python
-python most_rated_movie.py items=../../datasets/ml-100k/u.item ../../datasets/ml-100k/u.data
+python most_rated_movie.py --items=../../datasets/ml-100k/u.item ../../datasets/ml-100k/u.data
+```
+
+__Find the most loved friends__: this example find the friend who has the largest size of social network. It first loads the friends graph
+and count the the number of friends per person. In the second mapreduce stage, it maps the peopleID to names and then output the person with the maximum number of friends
+```python
+python most_loved_friends.py --names=../../datastes/Marvel-Names.txt ../../datasets/Marvel-Graph.txt
 ```
 
 # fundamental experiments
